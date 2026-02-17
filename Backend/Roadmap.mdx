@@ -1,0 +1,695 @@
+---
+title: 'More than just CRUD'
+description: 'On this page is like a Roadmap ig?'
+---
+
+## Introduction to Backend Systems
+- High-level understanding of backend systems
+- Request flow from browser to server
+- Network hops, firewalls, routing
+- Client-server communication model
+- Response structure and handling
+
+## HTTP Protocol Deep Dive
+- HTTP message structure and format
+- HTTP headers (request, response, representational, general, security)
+- HTTP methods (GET, POST, PUT, DELETE, PATCH, etc.)
+- HTTP status codes and when to use them
+- CORS (Cross-Origin Resource Sharing)
+  - Simple requests vs. pre-flight requests
+  - CORS headers and configuration
+- HTTP caching mechanisms (ETags, max-age)
+- HTTP versions comparison (1.1 vs 2.0 vs 3.0)
+- Content negotiation between client and server
+- Persistent connections
+- HTTP compression techniques (gzip, deflate, Brotli)
+- HTTPS, SSL/TLS security
+
+## API Design and Routing
+- Route mapping (URLs to server-side logic)
+- Components of routes (path parameters, query parameters)
+- Route types:
+  - Static routes
+  - Dynamic routes
+  - Nested routes
+  - Hierarchical routes
+  - Wildcard/catch-all routes
+  - Regular expression-based routes
+- API versioning techniques
+- API deprecation strategies
+- Route grouping benefits
+- Route security
+- Route matching performance optimization
+- RESTful architecture principles
+- REST API best practices
+- OpenAPI/Swagger specification
+- API-first development approach
+
+## Serialization and Deserialization
+- Purpose and benefits (interoperability)
+- Text-based formats (JSON, XML, YAML)
+- Binary formats (Protocol Buffers, MessagePack, BSON)
+- Performance comparisons and tradeoffs
+- Implementation across programming languages
+- JSON deep dive:
+  - Structure and data types
+  - Handling nested objects and collections
+  - Mapping to native data structures
+  - Common errors (missing fields, null values, date serialization)
+  - Custom serialization implementation
+  - Error handling
+  - Security concerns (injection attacks)
+  - Validation before deserialization
+  - JSON Schema validation
+  - Performance considerations
+  - Compression techniques
+
+## Authentication and Authorization
+- Authentication types:
+  - Stateful vs. stateless authentication
+  - Basic authentication
+  - Token-based authentication
+  - Session-based authentication
+  - JWT (JSON Web Tokens)
+  - Cookies
+- OAuth 2.0 protocol and OpenID Connect
+- API keys
+- Multi-factor authentication
+- Cryptographic techniques (salting, hashing)
+- Authorization models:
+  - ACL (Access Control Lists)
+  - RBAC (Role-Based Access Control)
+  - ABAC (Attribute-Based Access Control)
+- Security best practices:
+  - Secure cookies
+  - CSRF and XSS prevention
+  - MITM attack prevention
+  - Audit logging
+  - Obfuscating error messages
+  - Rate limiting and account lockout
+  - Preventing timing attacks
+
+## Input Validation and Transformation
+- Validation types:
+  - Syntactic validation (format, pattern)
+  - Semantic validation (business rules)
+  - Type validation (data types)
+- Client-side vs. server-side validation
+- Failing fast principles
+- Transformation types:
+  - Type casting
+  - Date format conversion
+  - Normalization (case conversion, whitespace trimming)
+  - Sanitization (security)
+- Complex validation logic:
+  - Relationship-based validation
+  - Conditional validation
+  - Chain validation
+- Error handling in validation
+- Validation performance optimization
+
+## Middleware Architecture
+- Middleware concept and use cases
+- Request lifecycle middleware (pre-request, post-response)
+- Middleware chaining and flow
+- Proper middleware ordering
+- Next function and early exit patterns
+- Common middleware types:
+  - Security middlewares (headers, CORS, CSRF)
+  - Rate limiting middleware
+  - Authentication middleware
+  - Logging and monitoring middleware
+  - Error handling middleware
+  - Compression middleware
+  - Body parsing middleware
+- Performance and scalability considerations
+
+## Request Context
+- Request-scoped state management
+- Components of request context:
+  - Request metadata (method, URL, headers, params)
+  - Session and user information
+  - Tracking and logging data
+  - Custom request-specific data
+- Use cases (authentication, rate limiting, tracing)
+- Timeouts and cancellation signals
+- Best practices and performance considerations
+
+## Handlers and Controllers
+- MVC pattern overview
+- Responsibilities of handlers, controllers, and services
+- Code reduction with middleware
+- Centralized error handling
+- Response formatting standards
+- CRUD operations implementation:
+  - Creating resources (POST)
+  - Reading resources (GET)
+  - Updating resources (PUT, PATCH)
+  - Deleting resources (DELETE)
+- Pagination implementation
+- Search API design
+- Sorting and filtering implementation
+- RESTful best practices
+
+## Database Management
+- Relational vs. non-relational databases
+- Theoretical concepts (ACID, CAP theorem)
+- Querying and joins
+- Database design best practices:
+  - Schema design
+  - Indexing strategies
+  - Normalization and denormalization
+- Optimization techniques:
+  - Query optimization
+  - Caching strategies
+  - Connection pooling
+- Data integrity:
+  - Constraints and validations
+  - Transactions
+  - Concurrency control
+- ORM (Object-Relational Mapping):
+  - Benefits and tradeoffs
+  - Popular ORM tools
+- Database migrations
+- NoSQL databases:
+  - Document stores (MongoDB)
+  - Key-value stores (Redis)
+  - Column-family stores (Cassandra)
+  - Graph databases (Neo4j)
+- Database sharding and replication
+
+## Business Logic Layer
+- Role and responsibilities
+- Application layers:
+  - Presentation layer
+  - Business logic layer
+  - Data access layer
+- Design principles:
+  - Separation of concerns
+  - Single responsibility
+  - Open/closed principle
+  - Dependency inversion
+- Components:
+  - Services
+  - Domain models
+  - Business rules
+  - Business validation
+- Service layer design best practices
+- Error handling and propagation
+
+## Caching Strategies
+- Purpose and benefits
+- Caching types:
+  - Memory caching
+  - Browser caching
+  - Database caching
+- Client-side vs. server-side caching
+- Caching strategies:
+  - Cache-aside
+  - Write-through
+  - Write-behind/Write-back
+  - Read-through
+- Cache eviction strategies:
+  - LRU (Least Recently Used)
+  - LFU (Least Frequently Used)
+  - TTL (Time To Live)
+  - FIFO (First In First Out)
+- Cache invalidation approaches
+- Caching levels:
+  - Level 1 (in-memory)
+  - Level 2 (distributed)
+  - Hierarchical caching
+- Web application caching (static assets, API responses)
+- Database query caching
+- Cache hit/miss ratio optimization
+
+## Transactional Emails
+- Use cases and common scenarios
+- Email anatomy:
+  - Subject
+  - Preheader
+  - Body (header, content, CTA, footer)
+- Personalization with dynamic parameters
+- Email templating systems
+- Email delivery services and APIs
+- Tracking and analytics
+- Best practices for deliverability
+
+## Task Queuing and Scheduling
+- Use cases:
+  - Email sending
+  - File processing
+  - Third-party API integration
+  - Heavy computation
+  - Batch processing
+- Scheduling use cases:
+  - Database backups
+  - Notifications and reminders
+  - Data synchronization
+  - Maintenance tasks
+- Task queue components:
+  - Producer
+  - Queue
+  - Consumer
+  - Broker
+  - Backend
+- Task dependencies:
+  - Chain dependency
+  - Parent-child relationship
+- Task groups for concurrent execution
+- Error handling and retry mechanisms
+- Task prioritization and rate limiting
+- Popular task queue systems (RabbitMQ, Kafka, Redis Queue)
+
+## Elasticsearch and Search
+- Elasticsearch fundamentals
+- Underlying techniques:
+  - Inverted index
+  - Term frequency and inverse document frequency
+  - Segments and shards
+- Use cases:
+  - Type-ahead/autocomplete
+  - Log analytics
+  - Full-text search
+- Index creation and management
+- Search and query types:
+  - Basic search
+  - Full-text search
+  - Relevance scoring
+- Performance optimization:
+  - Field mapping (text vs. keyword)
+  - Analyzers and tokenizers
+  - Boosting
+  - Pagination
+- Advanced search patterns:
+  - Filtering
+  - Aggregation
+  - Fuzzy search
+- Kibana integration
+- Best practices
+
+## Error Handling
+- Error types:
+  - Syntax errors
+  - Runtime errors
+  - Logical errors
+- Error handling strategies:
+  - Fail-safe vs. fail-fast
+  - Graceful degradation
+  - Error prevention
+- Best practices:
+  - Early catching
+  - Custom error types
+  - Graceful failure
+  - Proper logging
+  - Stack trace utilization
+- Global error handlers
+- User-facing error handling
+- Monitoring and logging integration
+- Error alerting systems
+
+## Configuration Management
+- Purpose and benefits
+- Use cases:
+  - Environment-specific settings
+  - Sensitive data management
+  - Feature flags
+- Configuration types:
+  - Static configs
+  - Dynamic configs
+  - Sensitive configs
+- Configuration sources:
+  - Environment variables
+  - Command-line flags
+  - Static files (JSON, YAML, INI)
+- Best practices
+- Configuration security
+
+## Logging, Monitoring, and Observability
+- Differences between logging, tracing, monitoring, and observability
+- Logging types:
+  - System logs
+  - Application logs
+  - Access logs
+  - Security logs
+- Log levels (debug, info, warn, error, fatal)
+- Structured vs. unstructured logging
+- Logging best practices
+- Monitoring types:
+  - Infrastructure monitoring
+  - Application performance monitoring
+  - Uptime monitoring
+- Monitoring tools (Prometheus, Grafana)
+- Alerts and notifications
+- Observability pillars:
+  - Logs
+  - Metrics
+  - Traces
+- Log management security and compliance
+- Distributed tracing in microservices
+
+## Graceful Shutdown
+- Purpose and importance
+- Use cases (server restarts, scaling, microservices)
+- Signal handling (SIGTERM, SIGINT)
+- Graceful shutdown steps:
+  - Signal capture
+  - Stop accepting requests
+  - Complete in-flight requests
+  - Close external resources
+  - Terminate application
+- Implementation patterns
+- Best practices
+
+## Security Best Practices
+- Common attacks and prevention:
+  - SQL injection
+  - NoSQL injection
+  - XSS (Cross-Site Scripting)
+  - CSRF (Cross-Site Request Forgery)
+  - Broken authentication
+  - Insecure deserialization
+- Secure software design principles:
+  - Least privilege
+  - Defense in depth
+  - Fail secure
+  - Separation of duties
+  - Security by design
+- Input validation and sanitization
+- Rate limiting
+- Content Security Policy
+- CORS configuration
+- Secure cookies
+- Security monitoring
+- OWASP Top 10 awareness
+
+## Scaling and Performance
+- Performance metrics:
+  - Response time
+  - Resource utilization
+  - Throughput
+- Bottleneck identification
+- Caching strategies
+- Database optimization:
+  - N+1 query problem
+  - Proper joins
+  - Lazy loading
+  - Indexes
+  - Batch processing
+- Memory management:
+  - Avoiding leaks
+  - Resource cleanup
+- Network optimization:
+  - Payload size reduction
+  - Compression
+- Performance testing and profiling
+- Code performance best practices
+- Horizontal vs. vertical scaling
+- Load balancing strategies
+
+## Concurrency and Parallelism
+- Differences and use cases
+- Concurrency for I/O-bound tasks
+- Parallelism for CPU-bound tasks
+- Concurrency patterns
+- Thread safety
+- Race conditions and deadlocks
+- Synchronization mechanisms
+- Asynchronous programming patterns
+
+## File Storage and Management
+- Object storage (AWS S3, Google Cloud Storage)
+- Large file handling:
+  - Chunking
+  - Streaming
+- Multi-part file uploads
+- File validation and security
+- Content delivery networks
+- File metadata management
+
+## Real-time Backend Systems
+- WebSockets
+- Server-Sent Events (SSE)
+- Pub/Sub architecture
+- Real-time databases
+- Scaling real-time systems
+- Implementation patterns
+- Popular frameworks and tools
+
+## Testing and Code Quality
+- Testing types:
+  - Unit testing
+  - Integration testing
+  - End-to-end testing
+  - Functional testing
+  - Regression testing
+  - Performance testing
+  - Load and stress testing
+  - User acceptance testing
+  - Security testing
+- Test-driven development (TDD)
+- CI/CD integration
+- Code quality tools:
+  - Linting
+  - Formatting
+  - Static analysis
+- Code quality metrics:
+  - Cyclomatic complexity
+  - Maintainability index
+  - Code coverage
+- Mocking and stubbing
+- Test data management
+
+## 12-Factor App Methodology
+- Codebase
+- Dependencies
+- Configuration
+- Backing services
+- Build, release, run
+- Processes
+- Port binding
+- Concurrency
+- Disposability
+- Dev/prod parity
+- Logs
+- Admin processes
+- Implementation patterns
+
+## OpenAPI Standards
+- Purpose and benefits
+- History (Swagger to OpenAPI)
+- Versions and features
+- Key concepts:
+  - API paths
+  - Request/response definitions
+  - Parameters
+  - Schemas
+- Document structure:
+  - Metadata
+  - Paths
+  - Components
+  - Security definitions
+  - Responses
+- OpenAPI 3.0/3.1 features
+- Tools (Swagger UI, Postman)
+- Best practices
+- API-first development
+
+## Webhooks
+- Use cases and benefits
+- API vs. webhook comparison
+- Components:
+  - Webhook URL
+  - Event triggers
+  - Payload
+  - HTTP method
+  - Response handling
+- Best practices:
+  - Signature verification
+  - HTTPS usage
+  - Quick response
+  - Retry logic
+  - Logging
+- Testing strategies
+- Real-world examples
+
+## DevOps for Backend Engineers
+- Core concepts:
+  - Continuous Integration (CI)
+  - Continuous Delivery (CD)
+  - Continuous Deployment
+- DevOps practices:
+  - Infrastructure as Code
+  - Configuration management
+  - Version control
+- DevOps tools:
+  - Docker (containerization)
+  - Kubernetes (orchestration)
+  - CI/CD pipelines
+- Scaling strategies:
+  - Horizontal vs. vertical scaling
+- Deployment strategies:
+  - Blue/green deployment
+  - Rolling deployment
+  - Canary deployment
+- Monitoring and observability in DevOps
+- Incident response and management
+
+## Additional Topics (Filling the Gaps)
+
+### Microservices Architecture
+- Monolithic vs. microservices
+- Service decomposition strategies
+- Inter-service communication:
+  - REST
+  - gRPC
+  - Message queues
+- API Gateway pattern
+- Service discovery
+- Circuit breaker pattern
+- Distributed transactions
+- Microservices testing
+- Deployment strategies
+
+### GraphQL
+- GraphQL vs. REST
+- Schema definition
+- Queries and mutations
+- Resolvers
+- GraphQL tools and libraries
+- Performance optimization
+- Security considerations
+- Versioning approach
+
+### Serverless Architecture
+- Function as a Service (FaaS)
+- Serverless frameworks
+- Event-driven architecture
+- Cold start problem
+- State management
+- Serverless databases
+- Cost optimization
+- Limitations and challenges
+
+### Data Streaming and Event-Driven Architecture
+- Event sourcing
+- CQRS pattern
+- Stream processing
+- Kafka architecture
+- Event-driven design patterns
+- Idempotency and exactly-once processing
+- Backpressure handling
+- Stream analytics
+
+### Internationalization and Localization
+- i18n fundamentals
+- Locale management
+- Date, time, and number formatting
+- Translation management
+- Right-to-left (RTL) support
+- Character encoding issues
+- Best practices
+
+### Domain-Driven Design (DDD)
+- Strategic design
+- Tactical patterns
+- Bounded contexts
+- Ubiquitous language
+- Aggregates, entities, value objects
+- Domain events
+- Implementing DDD in backend systems
+
+### Service Mesh
+- Concept and benefits
+- Control plane vs. data plane
+- Popular implementations (Istio, Linkerd)
+- Traffic management
+- Security features
+- Observability enhancements
+- Integration with Kubernetes
+
+### Blockchain for Backend Developers
+- Blockchain fundamentals
+- Smart contracts
+- Backend integration
+- Web3 APIs
+- Security considerations
+- Performance challenges
+- Use cases for traditional backends
+
+### Machine Learning Integration
+- ML model serving
+- Prediction API design
+- Model versioning
+- Feature engineering
+- Online vs. batch prediction
+- ML monitoring
+- A/B testing frameworks
+
+### Compliance and Regulations
+- GDPR compliance
+- CCPA/CPRA compliance
+- PCI DSS for payment systems
+- HIPAA for healthcare data
+- SOC 2 compliance
+- Privacy by design principles
+- Data residency requirements
+- Regulatory reporting
+
+## Learning Path Recommendations
+
+### Beginner Level
+1. Introduction to Backend Systems
+2. HTTP Protocol Deep Dive
+3. API Design and Routing
+4. Handlers and Controllers
+5. Input Validation and Transformation
+6. Database Management (basics)
+7. Error Handling
+8. Testing and Code Quality (basics)
+
+### Intermediate Level
+1. Authentication and Authorization
+2. Middleware Architecture
+3. Request Context
+4. Business Logic Layer
+5. Caching Strategies
+6. Logging, Monitoring, and Observability
+7. Security Best Practices
+8. Configuration Management
+9. Serialization and Deserialization
+10. Task Queuing and Scheduling
+11. RESTful APIs and OpenAPI Standards
+
+### Advanced Level
+1. Database Management (advanced)
+2. Elasticsearch and Search
+3. Scaling and Performance
+4. Concurrency and Parallelism
+5. Real-time Backend Systems
+6. Graceful Shutdown
+7. File Storage and Management
+8. 12-Factor App Methodology
+9. DevOps for Backend Engineers
+10. Webhooks
+11. Microservices Architecture
+12. GraphQL
+13. Serverless Architecture
+14. Data Streaming and Event-Driven Architecture
+
+### Specialized Skills
+1. Domain-Driven Design
+2. Service Mesh
+3. Machine Learning Integration
+4. Blockchain for Backend Developers
+5. Internationalization and Localization
+6. Compliance and Regulations
+
+## Resources
+- Books: "Clean Code" by Robert C. Martin, "Designing Data-Intensive Applications" by Martin Kleppmann
+- Online platforms: Udemy, Coursera, Pluralsight
+- Documentation: Official framework docs, MDN Web Docs
+- Open-source projects: Study popular repositories in your chosen language
+- Practice: Build progressively complex projects applying these concepts
+- Communities: Stack Overflow, Reddit (r/webdev, r/programming)
+- Blogs: High Scalability, Martin Fowler's blog, The Pragmatic Engineer
